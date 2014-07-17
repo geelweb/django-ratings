@@ -1,0 +1,14 @@
+{% load i18n %}
+
+<div class="rating">
+    {% blocktrans with nb_votes=instance.rating.votes %}({{ nb_votes }} opinions){% endblocktrans %}
+    <input name="rating_{{instance.pk}}" type="radio" class="star" disabled="disabled" {% if 1 == instance.rating.score %}checked="checked"{% endif %}>
+    <input name="rating_{{instance.pk}}" type="radio" class="star" disabled="disabled" {% if 2 == instance.rating.score %}checked="checked"{% endif %}>
+    <input name="rating_{{instance.pk}}" type="radio" class="star" disabled="disabled" {% if 3 == instance.rating.score %}checked="checked"{% endif %}>
+    <input name="rating_{{instance.pk}}" type="radio" class="star" disabled="disabled" {% if 4 == instance.rating.score %}checked="checked"{% endif %}>
+</div>
+
+{% if vote_url %}
+<a href="{{ vote_url }}">{% trans "Add an opinion" %}</a><br>
+{% endif %}
+

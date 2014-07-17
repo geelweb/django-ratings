@@ -1,0 +1,17 @@
+{% for comment in comments %}
+<div class="comment">
+    <div class="author">
+        Comment posted by {{ comment.user }} the {{ comment.date_created }}
+    </div>
+    <div class="stars">
+        <input name="rating_{{forloop.counter}}" type="radio" class="star" disabled="disabled" {% if 1 == comment.score %}checked="checked"{% endif %}>
+        <input name="rating_{{forloop.counter}}" type="radio" class="star" disabled="disabled" {% if 2 == comment.score %}checked="checked"{% endif %}>
+        <input name="rating_{{forloop.counter}}" type="radio" class="star" disabled="disabled" {% if 3 == comment.score %}checked="checked"{% endif %}>
+        <input name="rating_{{forloop.counter}}" type="radio" class="star" disabled="disabled" {% if 4 == comment.score %}checked="checked"{% endif %}>
+    </div>
+
+    <div class="body">{{ comment }}</div>
+</div>
+{% empty %}
+No comments
+{% endfor %}

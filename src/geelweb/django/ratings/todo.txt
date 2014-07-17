@@ -1,0 +1,7 @@
+
+* url de redirection dynamique
+* vue ratings/rate.html plus générique
+* templatetags comments [template/file.html] [instance=None] [user=None]
+* templatetags ratings_js [jquery=False]
+* number of stars must be dynamic
+* readme

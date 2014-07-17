@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+{% load staticfiles i18n %}
+
+{% block main_content %}
+
+{% blocktrans %}Rate {{ instance }}{% endblocktrans %}
+<form method="POST">
+    {% csrf_token %}
+
+    <div>
+        {{ form.rating }}
+    </div>
+
+    <br>
+
+    <div>
+        {{ form.comment.label }}<br>
+        {{ form.comment }}
+    </div>
+    <input type="submit" name="Rate">
+</form>
+{% endblock %}
+
+<!--script type="text/javascript" src="{% static "jquery.js" %}"></script>
+<script type="text/javascript" src="{% static "jquery.rating.js" %}"></script>
+<link href="{% static "jquery.rating.css" %}" rel="stylesheet"-->
+
+{% block bottom_js %}
+<!--script type="text/javascript">
+    //$('.star').rating();
+</script-->
+{% endblock %}
