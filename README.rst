@@ -15,8 +15,8 @@ from source::
 Dependances
 ===========
 
- * django-ratings
- * jQuery
+* django-ratings
+* jQuery
 
 Configuring
 ===========
@@ -37,7 +37,7 @@ Update the urls.py to add the view::
 
     from geelweb.django.ratings.views import RateView
 
-and add the url
+and add the url::
 
     url(r'^stuff/(?P<object_id>\d+)/rate/$', login_required(RateView.as_view(app_label='myapp', model='stuff')), name='rate_stuff'),
 
