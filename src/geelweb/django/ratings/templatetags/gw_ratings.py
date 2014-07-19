@@ -56,9 +56,12 @@ class ScoreNode(template.Node):
     def render(self, context):
         instance = self.instance.resolve(context)
         t = template.loader.get_template(self.template)
+        vote_url = None
+        if self.vote_url:
+            vote_url = self.vote_url.resolve(context)
         return t.render(template.Context({
                 'instance': instance,
-                'vote_url': self.vote_url.resolve(context)
+                'vote_url': self.vote_url.resolve(context) if self.vote_url else None
             }, autoescape=context.autoescape))
 
 @register.tag
