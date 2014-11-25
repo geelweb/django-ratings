@@ -1,5 +1,9 @@
+import random
+import string
+
 from django import template
 from django.contrib.contenttypes.models import ContentType
+
 from geelweb.django.ratings.models import RatingComment
 
 register = template.Library()
@@ -61,7 +65,8 @@ class ScoreNode(template.Node):
             vote_url = self.vote_url.resolve(context)
         return t.render(template.Context({
                 'instance': instance,
-                'vote_url': self.vote_url.resolve(context) if self.vote_url else None
+                'vote_url': self.vote_url.resolve(context) if self.vote_url else None,
+                'hash': ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(6))
             }, autoescape=context.autoescape))
 
 @register.tag

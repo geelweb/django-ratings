@@ -3,10 +3,10 @@
 <div class="rating">
     {% blocktrans with nb_votes=instance.rating.votes %}({{ nb_votes }} opinions){% endblocktrans %}
     {% with score=instance.rating.get_rating %}
-    <input name="rating_{{instance.pk}}" type="radio" class="star" disabled="disabled" {% if 0 < score and 2 > score %}checked="checked"{% endif %}>
-    <input name="rating_{{instance.pk}}" type="radio" class="star" disabled="disabled" {% if 2 <= score and 3 > score %}checked="checked"{% endif %}>
-    <input name="rating_{{instance.pk}}" type="radio" class="star" disabled="disabled" {% if 3 <= score and 4 > score %}checked="checked"{% endif %}>
-    <input name="rating_{{instance.pk}}" type="radio" class="star" disabled="disabled" {% if 4 <= score %}checked="checked"{% endif %}>
+    <input name="rating_{{ hash }}_{{instance.pk}}" type="radio" class="star" disabled="disabled" {% if 0 < score and 2 > score %}checked="checked"{% endif %}>
+    <input name="rating_{{ hash }}_{{instance.pk}}" type="radio" class="star" disabled="disabled" {% if 2 <= score and 3 > score %}checked="checked"{% endif %}>
+    <input name="rating_{{ hash }}_{{instance.pk}}" type="radio" class="star" disabled="disabled" {% if 3 <= score and 4 > score %}checked="checked"{% endif %}>
+    <input name="rating_{{ hash }}_{{instance.pk}}" type="radio" class="star" disabled="disabled" {% if 4 <= score %}checked="checked"{% endif %}>
     {% endwith %}
 </div>
 
