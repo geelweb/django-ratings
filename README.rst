@@ -24,7 +24,7 @@ Configuring
 Add ``geelweb.django.ratings`` to ``INSTALLED_APPS``
 
 Update your db with ``python manage.py syncdb`` or ``python manage.py migrate
-newsletters`` if you use `south <http://south.aeracode.org/>`_
+ratings`` if you use `south <http://south.aeracode.org/>`_
 
 Configure django-ratings for your model::
 
