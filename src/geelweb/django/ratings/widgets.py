@@ -1,6 +1,6 @@
-from django.forms.util import flatatt
+from django.forms.utils import flatatt
 
-from django.utils.encoding import StrAndUnicode, force_unicode
+from django.utils.encoding import force_unicode
 from django.utils.html import conditional_escape, format_html
 from django.utils.safestring import mark_safe
 
